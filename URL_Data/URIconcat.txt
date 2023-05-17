@@ -1,0 +1,49 @@
+package URL_Data;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
+public class URIconcat {
+    public static String decoderURL(String givenUrl) {
+        String decoderUrl = givenUrl;
+
+        try {
+            decoderUrl = URLDecoder.decode(givenUrl, StandardCharsets.UTF_8.name());
+        } catch (UnsupportedEncodingException e) {
+
+            e.printStackTrace();
+        }
+        return decoderUrl;
+    }
+
+    public static encoderUrl(String givenUrl){
+
+        String encodeUrl = givenUrl;
+        try{
+            encodeUrl = URLEncoder.encode(givenUrl,StandardCharsets.UTF_8.name());
+        }
+        catch(UnsupportedEncodingException e){
+            e.printStackTrace();
+        }
+        return encodeUrl;
+    }
+
+    public static void main(String[] args) {
+        String url = "https:\\www.youtube.com";
+        String urll = "https:\\www.facebook.com";
+
+        try{
+            URI Base = new URI(url);
+            URI uri = uriBase.create(url);
+            String query = uri.getQuery();
+            String fragments = uri.getFragment();
+
+            System.out.println("Encoded");
+            System.out.println();
+        }
+    }
+}
